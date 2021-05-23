@@ -57,8 +57,8 @@ class Newton_raphson extends Component {
         do {
             xnew = xold - (this.func(xold) / this.funcDiff(xold));
             epsilon = this.error(xnew, xold)
-            data['x'][n] = xnew.toFixed(8);
-            data['error'][n] = Math.abs(epsilon).toFixed(8);
+            data['x'][n] = xnew.toFixed(6);
+            data['error'][n] = Math.abs(epsilon).toFixed(6);
             n++;
             xold = xnew;
         } while (Math.abs(epsilon) > 0.000001);

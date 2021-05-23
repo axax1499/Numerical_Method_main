@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import { Layout, Input, Button, Card, Table } from 'antd';
 import { compile } from 'mathjs';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 // const { Content } = Layout;
@@ -105,8 +105,8 @@ class Bisec extends Component {
             
             data['xl'][n] = xl;
             data['xr'][n] = xr;
-            data['x'][n] = xm.toFixed(8);
-            data['error'][n] = Math.abs(sum).toFixed(8);
+            data['x'][n] = xm.toFixed(6);
+            data['error'][n] = Math.abs(sum).toFixed(6);
             n++;
             
             
@@ -187,6 +187,7 @@ class Bisec extends Component {
 
                     </div>
 
+
                     <br /><br />
                     {this.state.showGraph &&
                         <Card
@@ -203,6 +204,7 @@ class Bisec extends Component {
                             </LineChart>
                         </Card>
                     }
+
                     <br /><br />
                     {this.state.showOutputCard &&
 

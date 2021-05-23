@@ -65,8 +65,8 @@ class Secant extends Component {
             y = x[i] - (this.func(x[i]) * ((x[i] - x[i - 1]))) / (this.func(x[i]) - this.func(x[i - 1]));
             x.push(y);
             epsilon = this.error(y, x[i]);
-            data['y'][n] = y.toFixed(8);
-            data['error'][n] = Math.abs(epsilon).toFixed(8);
+            data['y'][n] = y.toFixed(6);
+            data['error'][n] = Math.abs(epsilon).toFixed(6);
 
             n++;
             i++;

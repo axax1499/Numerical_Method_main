@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
-import { Layout, Menu, Icon } from 'antd';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Layout, Menu } from 'antd';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 import './style/style.css'
-
+// import swaggerUi from 'swagger-ui-express'
 
 //Root_of_Equation
 import Bisection from './pages/Root_of_Equation/Bisection';
 import False_position from './pages/Root_of_Equation/False_position';
 import Newton_raphson from './pages/Root_of_Equation/Newton_raphson';
 import Onepoint from './pages/Root_of_Equation/Onepoint';
+// import Secant from './pages/Root_of_Equation/Secant';
 import Secant from './pages/Root_of_Equation/Secant';
 
+// import Swagger from '.API/swagger' 
+// import Home from './pages/Home'
 
 
-
-const { Header, Content, Footer, Sider } = Layout;
+const { Content} = Layout;
 
 const { SubMenu } = Menu;
 
@@ -32,7 +34,7 @@ class App extends Component {
       theme: value ? 'dark' : 'light',
     });
   };
-
+ 
   handleClick = e => {
     console.log('click ', e);
     this.setState({
@@ -59,7 +61,7 @@ class App extends Component {
 
         <nav className="nav">
           <ul>
-          
+
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                 RootofEquation
@@ -71,10 +73,18 @@ class App extends Component {
                 <li><a class="dropdown-item " href="/Onepoint">One point Iteration</a></li>
                 <li><a class="dropdown-item " href="/Secant">Secant</a></li>
               </ul>
+
+              <botton class="btn btn2">
+                <li><a type="botton" class="btn btn-secondary" href="/Home"  > Swagger </a></li>
+              </botton>
+              {/* <Menu.Item key="menu_swagger"><Link to='/Swagger'>Swagger</Link></Menu.Item> */}
             </div>
+
+             
 
             
           </ul>
+          
         </nav>
 
      
@@ -94,7 +104,8 @@ class App extends Component {
                 <Route path="/Newton_raphson" component={Newton_raphson} />
                 <Route path="/Onepoint" component={Onepoint} />
                 <Route path="/Secant" component={Secant} />
-                
+                {/* <Route path='/Swagger' component={Swagger}/> */}
+                {/* <Route path="/Home" component={Home} /> */}
               </Content>
 
             </Layout>

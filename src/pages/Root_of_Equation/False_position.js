@@ -108,14 +108,17 @@ class False_position extends Component {
             showGraph: true
         })
     }
+
     func(X) {
         var expr = compile(this.state.fx);
         let scope = { x: parseFloat(X) };
         return expr.eval(scope);
     }
+
     error(xnew, xold) {
         return Math.abs((xnew - xold) / xnew);
     }
+    
     createTable(xl, xr, x, error) {
         dataInTable = []
         for (var i = 0; i < xl.length; i++) {
